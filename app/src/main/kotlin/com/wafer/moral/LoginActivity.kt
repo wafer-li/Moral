@@ -33,11 +33,13 @@ class LoginActivity : AppCompatActivity() {
                     if (user.isTeacher) {
                         val intent = Intent(this,  LookStudentMoralActivity::class.java)
                         startActivity(intent)
+                        finish()
                     }
                     else {
                         val intent = Intent(this, MoralLookingActivity::class.java)
                         intent.putExtra(Constants.STUDENT_ID, user.id)
                         startActivity(intent)
+                        finish()
                     }
                 }
                 else {
