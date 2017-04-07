@@ -1,5 +1,6 @@
 package com.wafer.moral
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.content_login.*
@@ -27,7 +28,17 @@ class LoginActivity : AppCompatActivity() {
                 val userAuth = UserAuthentication(id, password)
 
                 if (TestData.userAuthData.contains(userAuth)) {
-                    //TODO Jump to Moral Looking
+                    val user = TestData.userMoralData.find { it.id == userAuth.id }!!
+
+                    if (user.isTeacher) {
+                        val intent = Intent(this,  LookStudentMoralActivity::class.java)
+                        startActivity(intent)
+                    }
+                    else {
+                        val intent = Intent(this, MoralLookingActivity::class.java)
+                        intent.putExtra(Constants.STUDENT_ID, user.id)
+                        startActivity(intent)
+                    }
                 }
                 else {
                     student_id.error = getString(R.string.id_or_password_wrong)
