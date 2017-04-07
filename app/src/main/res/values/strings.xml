@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Moral</string>
+
+    <!-- Login Activity -->
+    <string name="login_title">Login</string>
+    <string name="student_id_or_teacher_id">Student Id or Teacher Id</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="student_id_or_teacher_id_must_10">Student Id or Teacher Id must be 10</string>
+    <string name="password_not_empty">Password must be not empty</string>
+    <string name="id_or_password_wrong">Id or Password is wrong</string>
+
+</resources>
