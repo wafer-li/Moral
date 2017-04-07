@@ -10,4 +10,7 @@
     <string name="password_not_empty">Password must be not empty</string>
     <string name="id_or_password_wrong">Id or Password is wrong</string>
 
+    <!-- Moral Looking -->
+    <string name="moral_is">Moral Point is: \n %1$s</string>
+    <string name="no_student">No such student Id</string>
 </resources>
