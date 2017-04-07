@@ -7,6 +7,21 @@
         android:layout_height="match_parent"
         tools:context="com.wafer.moral.MoralLookingActivity">
 
+    <android.support.v7.widget.Toolbar
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:theme="?attr/actionBarTheme"
+            android:minHeight="?attr/actionBarSize"
+            android:id="@+id/moral_toolbar"
+            android:layout_marginRight="0dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:title="@string/moral_looking_title"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="0dp"/>
+
     <TextView
             android:text="@string/moral_is"
             android:layout_width="0dp"
@@ -21,5 +36,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="8dp"
             android:textAlignment="center"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"/>
 </android.support.constraint.ConstraintLayout>
