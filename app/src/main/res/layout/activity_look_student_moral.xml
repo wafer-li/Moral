@@ -38,7 +38,10 @@
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/student_id"/>
+                android:hint="@string/student_id"
+                android:maxLines="1"
+                android:maxLength="10"
+                android:inputType="number"/>
     </android.support.design.widget.TextInputLayout>
 
     <Button
