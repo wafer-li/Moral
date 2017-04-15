@@ -14,29 +14,37 @@
             android:theme="?attr/actionBarTheme"
             android:minHeight="?attr/actionBarSize"
             android:id="@+id/moral_toolbar"
-            android:layout_marginRight="0dp"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginLeft="0dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:title="@string/moral_looking_title"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="0dp"/>
+            />
 
-    <TextView
-            android:text="@string/moral_is"
+    <android.support.v7.widget.RecyclerView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:id="@+id/moralText"
             android:layout_marginRight="8dp"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginLeft="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/moral_toolbar"
+            android:id="@+id/events"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/total_point"
+            app:layout_constraintVertical_bias="0.0"/>
+
+    <TextView
+            android:text="TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/total_point"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="8dp"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp"
-            android:textAlignment="center"
-            android:gravity="center"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"/>
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginRight="8dp"
+            app:layout_constraintRight_toRightOf="parent"/>
+
 </android.support.constraint.ConstraintLayout>
