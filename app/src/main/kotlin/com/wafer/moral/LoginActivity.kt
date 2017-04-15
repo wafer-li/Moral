@@ -3,6 +3,8 @@ package com.wafer.moral
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import com.wafer.moral.model.request.LoginRequest
 import com.wafer.moral.model.response.LoginResponse
@@ -64,19 +66,31 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        student_id.editText?.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus && student_id.isErrorEnabled) {
+        student_id.editText?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 student_id.error = null
                 student_id.isErrorEnabled = false
             }
-        }
+        })
 
-        student_password.editText?.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus && student_password.isErrorEnabled) {
+        student_password.editText?.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 student_password.error = null
                 student_password.isErrorEnabled = false
             }
-        }
+        })
     }
 
     private fun isIdFormatCorrect(id: String?): Boolean = if (id == null) false else id.length == 10
