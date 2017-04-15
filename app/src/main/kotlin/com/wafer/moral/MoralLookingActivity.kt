@@ -40,5 +40,7 @@ class MoralLookingActivity : AppCompatActivity() {
                 }
             }
         })
+
+        logout.setOnClickListener { finish() }
     }
 }

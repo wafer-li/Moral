@@ -49,12 +49,14 @@ class LoginActivity : AppCompatActivity() {
                                 "T" -> {
                                     val intent = Intent(this@LoginActivity, LookStudentMoralActivity::class.java)
                                     startActivity(intent)
+                                    finish()
                                 }
 
                                 "S" -> {
                                     val intent = Intent(this@LoginActivity, MoralLookingActivity::class.java)
                                     intent.putExtra(Constants.STUDENT_ID, id)
                                     startActivity(intent)
+                                    finish()
                                 }
                             }
                         } else {
