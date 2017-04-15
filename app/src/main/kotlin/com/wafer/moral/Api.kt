@@ -20,6 +20,6 @@ interface Api {
     fun login(@Body loginRequest: LoginRequest): Call<LoginResponse>
 
     @GET("activity/{student_id}/{limit_num}")
-    fun getActivites(@Path("student_id") id: String, @Path("limit_num") limitNumber: Int = 10): Call<ActivitiesResponse>
+    fun getActivities(@Path("student_id") id: String, @Path("limit_num") limitNumber: Int = 10000): Call<ActivitiesResponse>
 
 }
