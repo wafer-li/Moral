@@ -40,8 +40,8 @@ class LoginActivity : AppCompatActivity() {
                     }
 
                     override fun onResponse(call: Call<LoginResponse>?, response: Response<LoginResponse>?) {
-                        if (response?.code() != 404) {
-                            val loginRequest = response!!.body()
+                        if (response != null && response.isSuccessful) {
+                            val loginRequest = response.body()
 
                             when (loginRequest.accountType) {
                                 "T" -> {
