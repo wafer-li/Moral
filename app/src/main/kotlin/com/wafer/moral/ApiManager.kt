@@ -1,6 +1,7 @@
 package com.wafer.moral
 
 import android.content.Context
+import android.util.Log
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
@@ -27,7 +28,9 @@ object ApiManager {
     private val gson = GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create()
 
     fun init(context: Context) {
-        this.context = context
+        Log.d("API MANAGER", "init")
+
+        this.context = context.applicationContext
 
         retrofit = Retrofit.Builder()
                 .baseUrl(BASE_URL)
