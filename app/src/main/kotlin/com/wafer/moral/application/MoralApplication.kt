@@ -1,7 +1,7 @@
 package com.wafer.moral.application
 
 import android.app.Application
-import com.wafer.moral.ApiManager
+import com.wafer.moral.network.ApiManager
 
 /**
  * The MoralApplication class

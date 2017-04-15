@@ -1,4 +1,4 @@
-package com.wafer.moral
+package com.wafer.moral.network
 
 import com.wafer.moral.model.request.LoginRequest
 import com.wafer.moral.model.response.ActivitiesResponse

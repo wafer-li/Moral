@@ -1,10 +1,14 @@
-package com.wafer.moral
+package com.wafer.moral.ui.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
+import com.wafer.moral.R
+import com.wafer.moral.application.Constants
 import com.wafer.moral.model.response.ActivitiesResponse
+import com.wafer.moral.network.ApiManager
+import com.wafer.moral.ui.adapter.EventAdapter
 import kotlinx.android.synthetic.main.activity_moral_looking.*
 import retrofit2.Call
 import retrofit2.Callback

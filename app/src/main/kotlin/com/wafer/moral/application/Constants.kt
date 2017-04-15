@@ -1,4 +1,4 @@
-package com.wafer.moral
+package com.wafer.moral.application
 
 /**
  * The Constants class

@@ -1,4 +1,4 @@
-package com.wafer.moral
+package com.wafer.moral.network
 
 import android.content.Context
 import android.util.Log

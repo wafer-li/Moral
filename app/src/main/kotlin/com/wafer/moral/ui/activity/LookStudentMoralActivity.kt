@@ -1,11 +1,14 @@
-package com.wafer.moral
+package com.wafer.moral.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
+import com.wafer.moral.R
+import com.wafer.moral.application.Constants
 import com.wafer.moral.model.response.ActivitiesResponse
+import com.wafer.moral.network.ApiManager
 import kotlinx.android.synthetic.main.activity_look_student_moral.*
 import retrofit2.Call
 import retrofit2.Callback
