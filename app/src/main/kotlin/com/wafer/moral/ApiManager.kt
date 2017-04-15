@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
  */
 object ApiManager {
 
-    const val BASE_URL = "http://101.200.144.204:23333/"
+    const val BASE_URL = "http://101.200.144.204:23333/junk_moral/"
 
     private lateinit var context: Context
 
