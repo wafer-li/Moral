@@ -12,6 +12,7 @@
 
     <!-- Moral Looking -->
     <string name="moral_looking_title">Moral Looking</string>
+    <string name="student_id_is">Student Id is %1$s</string>
     <string name="moral_is">Total Moral Point is: %1$s</string>
     <string name="grade_is">Moral Grade is: %1$s</string>
 
