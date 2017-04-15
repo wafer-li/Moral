@@ -20,7 +20,7 @@ class MoralLookingActivity : AppCompatActivity() {
 
         student_id.text = getString(R.string.student_id_is).format(studentId)
 
-        ApiManager.service.getActivites(studentId).enqueue(object : Callback<ActivitiesResponse> {
+        ApiManager.service.getActivities(studentId).enqueue(object : Callback<ActivitiesResponse> {
             override fun onFailure(call: Call<ActivitiesResponse>?, t: Throwable?) {
             }
 
