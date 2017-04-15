@@ -2,24 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="?attr/listPreferredItemHeight">
+              android:layout_height="wrap_content"
+              android:paddingTop="8dp"
+              android:paddingBottom="8dp">
 
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/event_name"
-            />
+            android:textSize="18sp"/>
 
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/event_time"
-            />
+            android:textSize="18sp"/>
 
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/event_grade"
             android:text="@string/grade_is"
-            />
+            android:textSize="18sp"/>
 </LinearLayout>
