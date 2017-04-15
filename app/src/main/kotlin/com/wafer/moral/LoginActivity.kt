@@ -3,7 +3,13 @@ package com.wafer.moral
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
+import com.wafer.moral.model.request.LoginRequest
+import com.wafer.moral.model.response.LoginResponse
 import kotlinx.android.synthetic.main.content_login.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
 
@@ -25,27 +31,36 @@ class LoginActivity : AppCompatActivity() {
                 student_password.error = getString(R.string.password_not_empty)
 
             if (isIdFormatCorrect && isPasswordFormatCorrect) {
-                val userAuth = UserAuthentication(id, password)
+                val call = ApiManager.service.login(LoginRequest(id, password))
 
-                if (TestData.userAuthData.contains(userAuth)) {
-                    val user = TestData.userMoralData.find { it.id == userAuth.id }!!
+                call.enqueue(object : Callback<LoginResponse> {
+                    override fun onFailure(call: Call<LoginResponse>?, t: Throwable?) {
+                        Log.d("fail", "true")
+                        Log.d("network Throwable", t.toString())
+                    }
 
-                    if (user.isTeacher) {
-                        val intent = Intent(this,  LookStudentMoralActivity::class.java)
-                        startActivity(intent)
-                        finish()
+                    override fun onResponse(call: Call<LoginResponse>?, response: Response<LoginResponse>?) {
+                        if (response?.code() != 404) {
+                            val loginRequest = response!!.body()
+
+                            when (loginRequest.accountType) {
+                                "T" -> {
+                                    val intent = Intent(this@LoginActivity, LookStudentMoralActivity::class.java)
+                                    startActivity(intent)
+                                }
+
+                                "S" -> {
+                                    val intent = Intent(this@LoginActivity, MoralLookingActivity::class.java)
+                                    intent.putExtra(Constants.STUDENT_ID, id)
+                                    startActivity(intent)
+                                }
+                            }
+                        } else {
+                            student_id.error = getString(R.string.id_or_password_wrong)
+                            student_password.error = getString(R.string.id_or_password_wrong)
+                        }
                     }
-                    else {
-                        val intent = Intent(this, MoralLookingActivity::class.java)
-                        intent.putExtra(Constants.STUDENT_ID, user.id)
-                        startActivity(intent)
-                        finish()
-                    }
-                }
-                else {
-                    student_id.error = getString(R.string.id_or_password_wrong)
-                    student_password.error = getString(R.string.id_or_password_wrong)
-                }
+                })
             }
         }
 
