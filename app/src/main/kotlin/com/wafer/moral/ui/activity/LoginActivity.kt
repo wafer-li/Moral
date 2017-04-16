@@ -2,10 +2,10 @@ package com.wafer.moral.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import com.wafer.moral.R
 import com.wafer.moral.application.Constants
 import com.wafer.moral.model.request.LoginRequest
@@ -40,8 +40,7 @@ class LoginActivity : AppCompatActivity() {
 
                 call.enqueue(object : Callback<LoginResponse> {
                     override fun onFailure(call: Call<LoginResponse>?, t: Throwable?) {
-                        Log.d("fail", "true")
-                        Log.d("network Throwable", t.toString())
+                        Snackbar.make(it, R.string.no_internet, Snackbar.LENGTH_SHORT).show()
                     }
 
                     override fun onResponse(call: Call<LoginResponse>?, response: Response<LoginResponse>?) {

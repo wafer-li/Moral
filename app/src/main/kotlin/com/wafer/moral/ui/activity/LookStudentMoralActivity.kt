@@ -2,6 +2,7 @@ package com.wafer.moral.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
@@ -28,6 +29,7 @@ class LookStudentMoralActivity : AppCompatActivity() {
             else {
                 ApiManager.service.getActivities(studentId).enqueue(object : Callback<ActivitiesResponse> {
                     override fun onFailure(call: Call<ActivitiesResponse>?, t: Throwable?) {
+                        Snackbar.make(it, R.string.no_internet, Snackbar.LENGTH_SHORT).show()
                     }
 
                     override fun onResponse(call: Call<ActivitiesResponse>?, response: Response<ActivitiesResponse>?) {

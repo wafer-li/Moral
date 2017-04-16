@@ -1,6 +1,7 @@
 package com.wafer.moral.ui.activity
 
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
@@ -26,6 +27,7 @@ class MoralLookingActivity : AppCompatActivity() {
 
         ApiManager.service.getActivities(studentId).enqueue(object : Callback<ActivitiesResponse> {
             override fun onFailure(call: Call<ActivitiesResponse>?, t: Throwable?) {
+                Snackbar.make(events, R.string.no_internet, Snackbar.LENGTH_SHORT).show()
             }
 
             override fun onResponse(call: Call<ActivitiesResponse>?, response: Response<ActivitiesResponse>?) {

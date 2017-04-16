@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Moral</string>
 
+    <!-- Common -->
+    <string name="no_internet">No Internet</string>
+
     <!-- Login Activity -->
     <string name="login_title">Login</string>
     <string name="student_id_or_teacher_id">Student Id or Teacher Id</string>
